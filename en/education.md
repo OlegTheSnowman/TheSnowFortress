@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: defaulten
 title: Education Materials
 ---
 ## Education materials

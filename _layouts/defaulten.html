@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title | default: "The Snow Fortress" }}</title>
+<link rel="stylesheet" href="/TheSnowFortress/styles.css"> <!-- Link to your CSS file here -->
+<script>
+function changeLanguage() {
+const selectedLang = document.getElementById('language').value;
+if (selectedLang === 'en') {
+window.location.href = '/TheSnowFortress/en/';
+} else if (selectedLang === 'uk') {
+window.location.href = '/TheSnowFortress/uk/';
+}
+}
+</script>
+</head>
+<body>
+<header>
+<h1>The Snow Fortress</h1>
+</header>
+<nav>
+<div class="language-selector">
+<label for="language">Language: </label>
+<select id="language" onchange="changeLanguage()">
+<option value="en" {{ page.lang == "en" ? "selected" : "" }}>English</option>
+<option value="uk" {{ page.lang == "uk" ? "selected" : "" }}>Українська</option>
+</select>
+</div>
+<div>
+<a href="/TheSnowFortress/en/index.md">Home</a>
+<a href="/TheSnowFortress/en/education.md">Education</a>
+<a href="/TheSnowFortress/en/about.md">About</a>
+</div>
+</nav>
+<main>
+{{ content }}
+</main>
+<footer>
+<p>&copy; {{ site.time | date: "%Y" }} The Snow Fortress</p>
+</footer>
+</body>
+</html>
