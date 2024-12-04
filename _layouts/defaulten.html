@@ -4,41 +4,95 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ page.title | default: "The Snow Fortress" }}</title>
-<link rel="stylesheet" href="/TheSnowFortress/styles.css"> <!-- Link to your CSS file here -->
+<link rel="stylesheet" href="/assets/css/styles.css"> <!-- Link to your CSS file here -->
+
 <script>
-function changeLanguage() {
-const selectedLang = document.getElementById('language').value;
-if (selectedLang === 'en') {
-window.location.href = '/TheSnowFortress/en/';
-} else if (selectedLang === 'uk') {
-window.location.href = '/TheSnowFortress/uk/';
+function toggleLanguageMenu() {
+    document.getElementById('languageMenu').classList.toggle('show');
 }
+
+function changeLanguage(lang) {
+    if (lang === 'en') {
+        window.location.href = '/en/';
+    } else if (lang === 'uk') {
+        window.location.href = '/uk/';
+    }
 }
 </script>
+
+<style>
+/* Basic styling for the language selector dropdown */
+.language-selector {
+    position: relative;
+}
+
+.language-btn {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.language-btn:hover {
+    background-color: #45a049;
+}
+
+#languageMenu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 100;
+}
+
+#languageMenu.show {
+    display: block;
+}
+
+.language-option {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.language-option:hover {
+    background-color: #f0f0f0;
+}
+</style>
 </head>
 <body>
 <header>
-<h1>The Snow Fortress</h1>
+    <h1>The Snow Fortress</h1>
 </header>
 <nav>
-<div class="language-selector">
-<label for="language">Language: </label>
-<select id="language" onchange="changeLanguage()">
-<option value="en" {{ page.lang == "en" ? "selected" : "" }}>English</option>
-<option value="uk" {{ page.lang == "uk" ? "selected" : "" }}>Українська</option>
-</select>
-</div>
-<div>
-<a href="/TheSnowFortress/en/index.md">Home</a>
-<a href="/TheSnowFortress/en/education.md">Education</a>
-<a href="/TheSnowFortress/en/about.md">About</a>
-</div>
+    <div class="language-selector">
+        <button class="language-btn" onclick="toggleLanguageMenu()">Language</button>
+        <div id="languageMenu">
+            <div class="language-option" onclick="changeLanguage('en')">English</div>
+            <div class="language-option" onclick="changeLanguage('uk')">Українська</div>
+        </div>
+    </div>
+    <div>
+        <a href="/en/index.html">Home</a>
+        <a href="/en/education.html">Education</a>
+        <a href="/en/about.html">About</a>
+    </div>
 </nav>
+
 <main>
-{{ content }}
+    {{ content }}
 </main>
+
 <footer>
-<p>&copy; {{ site.time | date: "%Y" }} The Snow Fortress</p>
+    <p>&copy; {{ site.time | date: "%Y" }} The Snow Fortress</p>
 </footer>
+
 </body>
 </html>
