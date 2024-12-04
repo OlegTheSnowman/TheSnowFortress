@@ -3,30 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/path/to/your/styles.css"> <!-- Link to your CSS -->
-    <title>{{ page.title }}</title>
+    <title>{{ page.title | default: "The Snow Fortress" }}</title>
+    <style>
+        /* Reset default styles */
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #1e90ff;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 1rem;
+        }
+
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-menu li {
+            margin: 0 1rem;
+        }
+
+        .button {
+            text-decoration: none;
+            color: #fff;
+            background: #4682b4;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #5dade2;
+        }
+
+        .dropdown {
+            display: none;
+            margin-top: 0.5rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .dropdown li {
+            margin: 0.5rem 0;
+        }
+
+        .dropdown li a {
+            text-decoration: none;
+            color: #4682b4;
+        }
+
+        .dropdown li a:hover {
+            text-decoration: underline;
+        }
+
+        .expand {
+            display: block;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        footer {
+            background: #4682b4;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const buttons = document.querySelectorAll(".button");
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const dropdown = button.nextElementSibling;
+                    if (dropdown.classList.contains("expand")) {
+                        dropdown.classList.remove("expand");
+                    } else {
+                        dropdown.classList.add("expand");
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
-<header>
-    <nav>
-        <ul>
-            <li><a href="/TheSnowFortress/">Home</a></li> <!-- Adjusted link -->
-            <li><a href="/TheSnowFortress/about.md">About</a></li> <!-- Adjusted link -->
-            <li><a href="/TheSnowFortress/contact.md">Contact</a></li> <!-- Adjusted link -->
-            <!-- Add more links as needed -->
-        </ul>
-    </nav>
-</header>
-
+    <header>
+        <h1>{{ site.title | default: "The Snow Fortress" }}</h1>
+        <nav>
+            <ul class="nav-menu">
+                <li>
+                    <a class="button">Home</a>
+                    <ul class="dropdown">
+                        <li><a href="/">Main Page</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="button">Education</a>
+                    <ul class="dropdown">
+                        <li><a href="/education/resource1.html">Resource 1</a></li>
+                        <li><a href="/education/resource2.html">Resource 2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="button">About</a>
+                    <ul class="dropdown">
+                        <li><a href="/about/story.html">Our Story</a></li>
+                        <li><a href="/about/team.html">Our Team</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="button">Contact</a>
+                    <ul class="dropdown">
+                        <li><a href="/contact/form.html">Contact Form</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        {{ content }} <!-- This will render the content of your Markdown file -->
+        {{ content }}
     </main>
-
     <footer>
-        <p>&copy; {{ site.time | date: '%Y' }} Your Website Name. All rights reserved.</p>
-        <p><a href="/privacy.md">Privacy Policy</a> | <a href="/terms.md">Terms of Service</a></p>
+        <p>&copy; {{ site.time | date: "%Y" }} The Snow Fortress. All rights reserved.</p>
     </footer>
-
-    <!-- Optional: Include any JavaScript files here -->
 </body>
 </html>
