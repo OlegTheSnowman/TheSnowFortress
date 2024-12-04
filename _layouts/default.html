@@ -21,7 +21,6 @@ padding: 1.5rem 0;
 header h1 {
 font-size: 2.5rem;
 margin: 0;
-letter-spacing: 2px;
 }
 nav {
 background: #1976d2;
@@ -35,10 +34,10 @@ list-style: none;
 margin: 0;
 padding: 0;
 }
-.nav-menu li {
+.nav-item {
 position: relative;
 }
-.button {
+.nav-link {
 text-decoration: none;
 color: #fff;
 background: #42a5f5;
@@ -46,32 +45,36 @@ padding: 0.5rem 1rem;
 border-radius: 5px;
 display: inline-block;
 }
-.button:hover {
+.nav-link:focus,
+.nav-link:hover {
 background: #64b5f6;
+outline: 2px solid #fff;
 }
-.dropdown {
+.nav-item .submenu {
 display: none;
+list-style: none;
 position: absolute;
 top: 100%;
 left: 0;
 background: #e3f2fd;
 padding: 0.5rem 0;
-list-style: none;
-min-width: 150px;
 border-radius: 5px;
 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+z-index: 1000;
 }
-.dropdown li a {
+.nav-item:focus-within .submenu,
+.nav-item:hover .submenu {
+display: block;
+}
+.submenu li a {
 text-decoration: none;
 color: #1a237e;
 padding: 0.5rem 1rem;
 display: block;
 }
-.dropdown li a:hover {
+.submenu li a:focus,
+.submenu li a:hover {
 background: #bbdefb;
-}
-.nav-menu li:hover .dropdown {
-display: block;
 }
 main {
 padding: 2rem;
@@ -94,29 +97,29 @@ margin: 0;
 </header>
 <nav>
 <ul class="nav-menu">
-<li>
-<a class="button">Home</a>
-<ul class="dropdown">
+<li class="nav-item">
+<a href="/" class="nav-link" aria-expanded="false" aria-haspopup="true">Home</a>
+<ul class="submenu">
 <li><a href="/">Main Page</a></li>
 </ul>
 </li>
-<li>
-<a class="button">Education</a>
-<ul class="dropdown">
+<li class="nav-item">
+<a href="#" class="nav-link" aria-expanded="false" aria-haspopup="true">Education</a>
+<ul class="submenu">
 <li><a href="/education/resource1.md">Resource 1</a></li>
 <li><a href="/education/resource2.md">Resource 2</a></li>
 </ul>
 </li>
-<li>
-<a class="button">About</a>
-<ul class="dropdown">
+<li class="nav-item">
+<a href="#" class="nav-link" aria-expanded="false" aria-haspopup="true">About</a>
+<ul class="submenu">
 <li><a href="/about/story.md">Our Story</a></li>
 <li><a href="/about/team.md">Our Team</a></li>
 </ul>
 </li>
-<li>
-<a class="button">Contact</a>
-<ul class="dropdown">
+<li class="nav-item">
+<a href="#" class="nav-link" aria-expanded="false" aria-haspopup="true">Contact</a>
+<ul class="submenu">
 <li><a href="/contact/form.md">Contact Form</a></li>
 </ul>
 </li>
