@@ -25,56 +25,18 @@ margin: 0;
 nav {
 background: #1976d2;
 padding: 1rem;
+text-align: center;
 }
-.nav-menu {
-display: flex;
-justify-content: center;
-gap: 1rem;
-list-style: none;
-margin: 0;
-padding: 0;
-}
-.nav-item {
-position: relative;
-}
-.nav-link {
-text-decoration: none;
+nav a {
 color: #fff;
-background: #42a5f5;
-padding: 0.5rem 1rem;
-border-radius: 5px;
-display: inline-block;
-}
-.nav-link:focus,
-.nav-link:hover {
-background: #64b5f6;
-outline: 2px solid #fff;
-}
-.nav-item .submenu {
-display: none;
-list-style: none;
-position: absolute;
-top: 100%;
-left: 0;
-background: #e3f2fd;
-padding: 0.5rem 0;
-border-radius: 5px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-z-index: 1000;
-}
-.nav-item:focus-within .submenu,
-.nav-item:hover .submenu {
-display: block;
-}
-.submenu li a {
 text-decoration: none;
-color: #1a237e;
-padding: 0.5rem 1rem;
-display: block;
+margin: 0 1rem;
+font-size: 1.2rem;
 }
-.submenu li a:focus,
-.submenu li a:hover {
-background: #bbdefb;
+nav a:hover,
+nav a:focus {
+color: #64b5f6;
+text-decoration: underline;
 }
 main {
 padding: 2rem;
@@ -96,34 +58,10 @@ margin: 0;
 <h1>The Snow Fortress</h1>
 </header>
 <nav>
-<ul class="nav-menu">
-<li class="nav-item">
-<a href="/" class="nav-link" aria-expanded="false" aria-haspopup="true">Home</a>
-<ul class="submenu">
-<li><a href="/">Main Page</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a href="#" class="nav-link" aria-expanded="false" aria-haspopup="true">Education</a>
-<ul class="submenu">
-<li><a href="/education/resource1.md">Resource 1</a></li>
-<li><a href="/education/resource2.md">Resource 2</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a href="#" class="nav-link" aria-expanded="false" aria-haspopup="true">About</a>
-<ul class="submenu">
-<li><a href="/about/story.md">Our Story</a></li>
-<li><a href="/about/team.md">Our Team</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a href="#" class="nav-link" aria-expanded="false" aria-haspopup="true">Contact</a>
-<ul class="submenu">
-<li><a href="/contact/form.md">Contact Form</a></li>
-</ul>
-</li>
-</ul>
+<a href="/">Home</a>
+<a href="/education/">Education</a>
+<a href="/about/">About</a>
+<a href="/contact/">Contact</a>
 </nav>
 <main>
 {{ content }}
