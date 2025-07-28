@@ -1,0 +1,40 @@
+{
+    "last_selected_client": "VIP Mud",
+    "clients": {
+        "MUSHclient": {
+            "name": "MUSHclient",
+            "soundpack_path": "",
+            "scripts_repo_url": "http://nathantech.net:3000/api/v1/repos/CosmicRage/Mush-Soundpack/contents",
+            "sounds_repo_url": "http://nathantech.net:3000/api/v1/repos/CosmicRage/CosmicRageSounds/contents",
+            "sounds_subfolder": "ogg",
+            "exclusions": [
+                "cosmic rage/worlds/cosmic rage/cosmic rage.mcl"
+            ],
+            "advanced_settings": {
+                "scan_workers": 4,
+                "download_workers": 8,
+                "advanced_enabled": false
+            },
+            "scripts_target_subdir": "",
+            "sounds_target_subdir": "cosmic rage/worlds/cosmic rage/sounds"
+        },
+        "VIP Mud": {
+            "name": "VIP Mud",
+            "soundpack_path": "D:\\test sp",
+            "scripts_repo_url": "http://nathantech.net:3000/api/v1/repos/CosmicRage/VIPMudCosmicRageScripts/contents",
+            "sounds_repo_url": "http://nathantech.net:3000/api/v1/repos/CosmicRage/CosmicRageSounds/contents",
+            "sounds_subfolder": "wav",
+            "exclusions": [
+                "settings.set",
+                "gags/"
+            ],
+            "advanced_settings": {
+                "advanced_enabled": true,
+                "scan_workers": 10,
+                "download_workers": 8
+            },
+            "scripts_target_subdir": "",
+            "sounds_target_subdir": "sounds"
+        }
+    }
+}

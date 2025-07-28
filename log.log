@@ -1,0 +1,15 @@
+2025-07-28 19:11:10,852 - INFO - soundpack_updator - Application starting.
+2025-07-28 19:11:10,858 - DEBUG - gui - MainFrame initializing.
+2025-07-28 19:11:10,858 - DEBUG - config_manager - Attempting to load configs from configs.json
+2025-07-28 19:11:10,874 - DEBUG - config_manager - Attempting to load configs from configs.json
+2025-07-28 19:11:13,635 - INFO - gui - PerformAction called.
+2025-07-28 19:11:13,635 - DEBUG - config_manager - Attempting to load configs from configs.json
+2025-07-28 19:11:13,636 - INFO - gui - Setting UI mode to: running
+2025-07-28 19:11:13,650 - DEBUG - gui - Worker thread target started.
+2025-07-28 19:11:13,651 - INFO - soundpack_manager - --- Preparing to update SCRIPTS component ---
+2025-07-28 19:11:14,281 - INFO - soundpack_manager - --- Preparing to update SOUNDS component ---
+2025-07-28 19:11:14,281 - DEBUG - soundpack_manager - Sounds component target directory calculated as: D:\test sp\sounds
+2025-07-28 19:11:14,746 - INFO - gui - Worker thread has finished.
+2025-07-28 19:11:14,746 - INFO - gui - Setting UI mode to: idle
+2025-07-28 19:11:21,299 - DEBUG - gui - OnClose event triggered.
+2025-07-28 19:11:21,326 - INFO - soundpack_updator - Application shutting down.

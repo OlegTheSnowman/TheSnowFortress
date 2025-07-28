@@ -1,0 +1,1 @@
+python soundpack_updator.py 2> debug.txt
